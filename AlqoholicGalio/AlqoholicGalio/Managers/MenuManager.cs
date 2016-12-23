@@ -25,12 +25,13 @@ namespace AlqoholicGalio.Managers
     #region Using Directives
 
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Linq;
 
     using LeagueSharp;
     using LeagueSharp.Common;
 
-    using SharpDX;
+    using Color = SharpDX.Color;
 
     #endregion
 
@@ -111,13 +112,13 @@ namespace AlqoholicGalio.Managers
         {
             var orbwalkerMenu = new Menu("Orbwalker", "orbwalker");
 
-            Menu = new Menu("DrunkGalio", "DrunkGalio", true);
-            Orbwalker = new Orbwalking.Orbwalker(orbwalkerMenu);
+            Menu = new Menu("DrunkGalio", "DrunkGalio", true).SetFontStyle(FontStyle.Underline, Color.Gold);
+            Orbwalker = new Orbwalking.Orbwalker(orbwalkerMenu.SetFontStyle(FontStyle.Bold, Color.MediumTurquoise));
             Menu.AddSubMenu(orbwalkerMenu);
             SPrediction.Prediction.Initialize(Menu);
 
             // Combo Menu
-            ComboMenu = new Menu("Drunk Galio - Combo", "comboMenu");
+            ComboMenu = new Menu("Drunk Galio - Combo", "comboMenu").SetFontStyle(FontStyle.Bold, Color.MediumTurquoise);
             ComboMenu.AddItem(
                 new MenuItem("comboPrediction", "Combo - Prediction Mode").SetValue(
                     new StringList(
@@ -134,7 +135,7 @@ namespace AlqoholicGalio.Managers
             ComboMenu.AddItem(new MenuItem("rAmount", "Only R when x >= enemies").SetValue(new Slider(3, 0, 5)));
 
             // Harass Menu
-            HarassMenu = new Menu("Drunk Galio - Harass", "harassMenu");
+            HarassMenu = new Menu("Drunk Galio - Harass", "harassMenu").SetFontStyle(FontStyle.Bold, Color.MediumTurquoise);
             HarassMenu.AddItem(
                 new MenuItem("autoHarass", "Auto Harass").SetValue(new KeyBind('T', KeyBindType.Toggle, true)))
                 .Permashow(true, "Drunk Galio - Auto Harass", new Color(0, 255, 255));
@@ -144,7 +145,7 @@ namespace AlqoholicGalio.Managers
             HarassMenu.AddItem(new MenuItem("harassMana", "Harass - Mana").SetValue(new Slider(60)));
 
             // Lane Clear Menu
-            LaneClearMenu = new Menu("Drunk Galio - Lane Clear", "laneClearMenu");
+            LaneClearMenu = new Menu("Drunk Galio - Lane Clear", "laneClearMenu").SetFontStyle(FontStyle.Bold, Color.MediumTurquoise);
             LaneClearMenu.AddItem(
                 new MenuItem("laneClearSpells", "Lane Clear - Use Spells").SetValue(
                     new KeyBind('M', KeyBindType.Toggle)))
@@ -158,7 +159,7 @@ namespace AlqoholicGalio.Managers
             LaneClearMenu.AddItem(new MenuItem("laneClearMana", "Lane Clear - Mana").SetValue(new Slider(60)));
 
             // Escape Menu
-            EscapeMenu = new Menu("Drunk Galio - Escape", "escapeMenu");
+            EscapeMenu = new Menu("Drunk Galio - Escape", "escapeMenu").SetFontStyle(FontStyle.Bold, Color.MediumTurquoise);
             EscapeMenu.AddItem(
                 new MenuItem("escapeKey", "Escape - Escape").SetValue(new KeyBind('A', KeyBindType.Press)));
 
@@ -166,7 +167,7 @@ namespace AlqoholicGalio.Managers
             EscapeMenu.AddItem(new MenuItem("escapeE", "Escape - Use E").SetValue(true));
 
             // Draw Menu
-            DrawMenu = new Menu("Drunk Galio - Draw", "drawMenu");
+            DrawMenu = new Menu("Drunk Galio - Draw", "drawMenu").SetFontStyle(FontStyle.Bold, Color.MediumTurquoise);
             DrawMenu.AddItem(new MenuItem("drawEnabled", "Draw - Enabled").SetValue(true));
             DrawMenu.AddItem(new MenuItem("drawDamage", "Draw - Draw Damage").SetValue(true));
             DrawMenu.AddItem(new MenuItem("drawQ", "Draw - Q Range").SetValue(true));
@@ -175,7 +176,7 @@ namespace AlqoholicGalio.Managers
             DrawMenu.AddItem(new MenuItem("drawR", "Draw - R Range").SetValue(true));
 
             // Misc Menu
-            MiscMenu = new Menu("Drunk Galio - Misc", "miscMenu");
+            MiscMenu = new Menu("Drunk Galio - Misc", "miscMenu").SetFontStyle(FontStyle.Bold, Color.MediumTurquoise);
             WMenu = new Menu("W", "wMenu");
             AlliesMenu = new Menu("W - Allies", "alliesMenu");
             MiscMenu.AddSubMenu(WMenu);
