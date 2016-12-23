@@ -1,0 +1,16 @@
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\DrunkLee.exe.config
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\DrunkLee.exe
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\DrunkLee.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\clipper_library.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\LeagueSharp.Common.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\LeagueSharp.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\SharpDX.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\LeagueSharp.Data.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\Newtonsoft.Json.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\clipper_library.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\LeagueSharp.Common.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\bin\Debug\LeagueSharp.Data.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\obj\Debug\DrunkLee.csprojResolveAssemblyReference.cache
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\obj\Debug\DrunkLee.exe
+C:\Users\billy\Documents\GitHub\LeagueSharp\DrunkLee\DrunkLee\obj\Debug\DrunkLee.pdb
