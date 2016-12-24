@@ -83,6 +83,8 @@ namespace MinionsTillLevel
 
             NumberOfMelee = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceMelee));
             NumberOfRanged = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceRanged));
+            NumberOfCannons = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceCannon));
+            NumberOfSupers = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceSuper));
         }
 
         #endregion
