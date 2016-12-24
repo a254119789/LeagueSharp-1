@@ -1,0 +1,16 @@
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\obj\Debug\MinionsTillLevel.csprojResolveAssemblyReference.cache
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\MinionsTillLevel.exe.config
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\MinionsTillLevel.exe
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\MinionsTillLevel.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\LeagueSharp.Common.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\LeagueSharp.Data.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\LeagueSharp.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\SharpDX.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\clipper_library.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\LeagueSharp.Common.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\LeagueSharp.Data.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\bin\Debug\clipper_library.pdb
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\obj\Debug\MinionsTillLevel.exe
+C:\Users\billy\Documents\GitHub\LeagueSharp\MinionsTillLevel\MinionsTillLevel\obj\Debug\MinionsTillLevel.pdb
