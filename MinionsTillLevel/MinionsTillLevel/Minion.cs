@@ -51,27 +51,21 @@ namespace MinionsTillLevel
 
         internal static float ExperienceSuper = 97f;
 
-        internal static int NumberOfMelee = 0;
-
-        internal static int NumberOfRanged = 0;
-
-        internal static int NumberOfCannons = 0;
-
-        internal static int NumberOfSupers = 0;
-
         internal static List<Obj_AI_Base> Minions;
 
+        internal static int NumberOfCannons;
+
+        internal static int NumberOfMelee;
+
         internal static int NumberOfMinions;
+
+        internal static int NumberOfRanged;
+
+        internal static int NumberOfSupers;
 
         #endregion
 
         #region Public Methods and Operators
-
-        public static void Init()
-        {
-            Minions = MinionManager.GetMinions(ObjectManager.Player.Position, 1600f).Where(x => !x.IsDead).ToList();
-            NumberOfMinions = Minions.Count();
-        }
 
         public static void GetMinions()
         {
@@ -80,11 +74,16 @@ namespace MinionsTillLevel
             // NumberOfCannons = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceCannon);
             // NumberOfSupers = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceSuper);
 
-
             NumberOfMelee = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceMelee));
             NumberOfRanged = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceRanged));
             NumberOfCannons = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceCannon));
             NumberOfSupers = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceSuper));
+        }
+
+        public static void Init()
+        {
+            Minions = MinionManager.GetMinions(ObjectManager.Player.Position, 1600f).Where(x => !x.IsDead).ToList();
+            NumberOfMinions = Minions.Count();
         }
 
         #endregion

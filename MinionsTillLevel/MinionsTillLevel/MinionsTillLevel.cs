@@ -39,11 +39,11 @@ namespace MinionsTillLevel
     {
         #region Static Fields
 
-        public static readonly Obj_AI_Hero Player = ObjectManager.Player;
+        public static double ExpTillNextLevel;
 
         public static string GlobalExpTillLevel;
 
-        public static double ExpTillNextLevel;
+        public static readonly Obj_AI_Hero Player = ObjectManager.Player;
 
         #endregion
 
@@ -85,8 +85,8 @@ namespace MinionsTillLevel
                 return;
             }
             GlobalExpTillLevel =
-                (PlayerManager.ReturnTotalExp(Player.Level)
-                 - PlayerManager.ReturnNextLevelExp(Player.Level)).ToString(CultureInfo.CurrentCulture);
+                (PlayerManager.ReturnTotalExp(Player.Level) - PlayerManager.ReturnNextLevelExp(Player.Level)).ToString(
+                    CultureInfo.CurrentCulture);
         }
 
         #endregion

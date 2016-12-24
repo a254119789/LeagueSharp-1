@@ -64,9 +64,9 @@ namespace MinionsTillLevel.Managers
         public static void OnDraw(EventArgs args)
         {
             StringText = string.Format(
-            "Current EXP: {0} | EXP For Next Level: {1}",
-            ObjectManager.Player.Experience,
-            MinionsTillLevel.GlobalExpTillLevel);
+                "Current EXP: {0} | EXP For Next Level: {1}",
+                ObjectManager.Player.Experience,
+                MinionsTillLevel.GlobalExpTillLevel);
 
             if (!MenuManager.Enabled)
             {
@@ -76,7 +76,15 @@ namespace MinionsTillLevel.Managers
 
             var heropos = Drawing.WorldToScreen(ObjectManager.Player.Position);
             Drawing.DrawText(heropos.X - 175, heropos.Y + 50, Color.Tomato, StringText);
-            Drawing.DrawText(heropos.X - 160, heropos.Y + 75, Color.Coral, string.Format("Minions till level: {0} Melee or {1} Ranged or {2} Cannons", Minion.NumberOfMelee, Minion.NumberOfRanged, Minion.NumberOfCannons));
+            Drawing.DrawText(
+                heropos.X - 160,
+                heropos.Y + 75,
+                Color.Coral,
+                string.Format(
+                    "Minions till level: {0} Melee or {1} Ranged or {2} Cannons",
+                    Minion.NumberOfMelee,
+                    Minion.NumberOfRanged,
+                    Minion.NumberOfCannons));
         }
 
         #endregion
