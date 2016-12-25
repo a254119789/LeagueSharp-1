@@ -37,8 +37,7 @@ namespace MinionsTillLevel
 
         private static void Game_OnGameLoad(EventArgs args)
         {
-            var newInstance = new MinionsTillLevel();
-            newInstance.Init();
+            MinionsTillLevel.Init();
         }
 
         private static void Main()

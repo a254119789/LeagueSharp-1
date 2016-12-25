@@ -26,6 +26,7 @@ namespace MinionsTillLevel.Managers
 
     using System;
     using System.Drawing;
+    using System.Linq;
 
     using LeagueSharp;
     using LeagueSharp.Common;
@@ -63,28 +64,57 @@ namespace MinionsTillLevel.Managers
 
         public static void OnDraw(EventArgs args)
         {
-            StringText = string.Format(
-                "Current EXP: {0} | EXP For Next Level: {1}",
-                ObjectManager.Player.Experience,
-                MinionsTillLevel.GlobalExpTillLevel);
+            var textColor = MenuManager.Menu.Item("drawText").GetValue<Circle>().Color;
+            var rangeColor = MenuManager.Menu.Item("drawRange").GetValue<Circle>().Color;
+            var range = MenuManager.Menu.Item("drawRange").GetValue<Circle>().Radius;
 
             if (!MenuManager.Enabled)
             {
                 return;
             }
-            Render.Circle.DrawCircle(ObjectManager.Player.Position, 1600f, Color.Tomato);
+            Render.Circle.DrawCircle(ObjectManager.Player.Position, range, rangeColor);
 
-            var heropos = Drawing.WorldToScreen(ObjectManager.Player.Position);
-            Drawing.DrawText(heropos.X - 175, heropos.Y + 50, Color.Tomato, StringText);
-            Drawing.DrawText(
-                heropos.X - 160,
-                heropos.Y + 75,
-                Color.Coral,
-                string.Format(
-                    "Minions till level: {0} Melee or {1} Ranged or {2} Cannons",
-                    Minion.NumberOfMelee,
-                    Minion.NumberOfRanged,
-                    Minion.NumberOfCannons));
+            if (!MenuManager.Menu.Item("drawText").GetValue<Circle>().Active)
+            {
+                return;
+            }
+
+            foreach (var champion in HeroManager.AllHeroes.ToList())
+            {
+                if (!champion.IsVisible || champion.IsDead || !MenuManager.Menu.Item("drawFor" + champion.ChampionName).GetValue<bool>())
+                {
+                    return;
+                }
+
+                var expTillLevel = Math.Ceiling(PlayerManager.ReturnNextLevelExp(champion.Level) - champion.Experience);
+                var pos = Drawing.WorldToScreen(champion.Position);
+                var stringText = string.Format(
+                    "{0}: Current EXP: {1} | EXP For Next Level: {2}",
+                    champion.ChampionName,
+                    champion.Experience,
+                    expTillLevel);
+
+                var numberOfMelee = (int)Math.Ceiling(expTillLevel / (Minion.ExperienceMelee));
+                var numberOfRanged = (int)Math.Ceiling(expTillLevel / (Minion.ExperienceRanged));
+                var numberOfCannons = (int)Math.Ceiling(expTillLevel / (Minion.ExperienceCannon));
+                var numberOfSupers = (int)Math.Ceiling(expTillLevel / (Minion.ExperienceSuper));
+
+                Drawing.DrawText(
+                    pos.X - 165,
+                    pos.Y + MenuManager.Menu.Item("yOffset").GetValue<Slider>().Value,
+                    textColor,
+                    stringText);
+
+                Drawing.DrawText(
+                    pos.X - 150,
+                    pos.Y + MenuManager.Menu.Item("yOffset").GetValue<Slider>().Value + 20,
+                    textColor,
+                    string.Format(
+                        "Minions till level: {0} Melee or {1} Ranged or {2} Cannons",
+                        numberOfMelee,
+                        numberOfRanged,
+                        numberOfCannons));
+            }
         }
 
         #endregion

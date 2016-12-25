@@ -71,13 +71,13 @@ namespace MinionsTillLevel
         {
             //NumberOfMelee = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceMelee);
             //NumberOfRanged = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceRanged);
-            // NumberOfCannons = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceCannon);
-            // NumberOfSupers = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceSuper);
+            //NumberOfCannons = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceCannon);
+            //NumberOfSupers = Convert.ToInt16(MinionsTillLevel.ExpTillNextLevel / ExperienceSuper);
 
-            NumberOfMelee = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceMelee));
-            NumberOfRanged = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceRanged));
-            NumberOfCannons = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceCannon));
-            NumberOfSupers = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceSuper));
+            //NumberOfMelee = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceMelee));
+            //NumberOfRanged = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceRanged));
+            //NumberOfCannons = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceCannon));
+            //NumberOfSupers = (int)Math.Ceiling(MinionsTillLevel.ExpTillNextLevel / (ExperienceSuper));
         }
 
         public static void Init()

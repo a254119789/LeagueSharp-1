@@ -49,7 +49,7 @@ namespace MinionsTillLevel
 
         #region Public Methods and Operators
 
-        public void Init()
+        public static void Init()
         {
             MenuManager.Init();
             PlayerManager.Init();

@@ -24,7 +24,12 @@ namespace MinionsTillLevel.Managers
 {
     #region Using Directives
 
+    using System.Drawing;
+    using System.Linq;
+
     using LeagueSharp.Common;
+
+    using Circle = LeagueSharp.Common.Circle;
 
     #endregion
 
@@ -34,7 +39,7 @@ namespace MinionsTillLevel.Managers
 
         public static bool Enabled;
 
-        private static Menu menu;
+        public static Menu Menu;
 
         #endregion
 
@@ -42,11 +47,21 @@ namespace MinionsTillLevel.Managers
 
         public static void Init()
         {
-            menu = new Menu("MinionsTillLevel", "minionsTillLevel", true);
+            Menu = new Menu("MinionsTillLevel", "minionsTillLevel", true);
 
-            menu.AddItem(new MenuItem("enable", "MinionsTillLevel - Enabled").SetValue(true));
-            Enabled = menu.Item("enable").GetValue<bool>();
-            menu.AddToMainMenu();
+            Menu.AddItem(new MenuItem("enable", "MinionsTillLevel - Enabled").SetValue(true));
+            Menu.AddItem(new MenuItem("drawText", "Draw Text").SetValue(new Circle(true, Color.White, 0f)));
+            Menu.AddItem(new MenuItem("drawRange", "Draw Exp Range").SetValue(new Circle(true, Color.White, 1600f)));
+            Menu.AddItem(new MenuItem("yOffset", "Y Pos Offset").SetValue(new Slider(50, 0, 150)));
+
+            foreach (var champion in HeroManager.AllHeroes.ToList())
+            {
+                Menu.AddItem(
+                    new MenuItem("drawFor" + champion.ChampionName, "Draw for " + champion.ChampionName).SetValue(true));
+            }
+
+            Enabled = Menu.Item("enable").GetValue<bool>();
+            Menu.AddToMainMenu();
         }
 
         #endregion
