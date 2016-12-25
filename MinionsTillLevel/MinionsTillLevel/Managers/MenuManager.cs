@@ -24,9 +24,11 @@ namespace MinionsTillLevel.Managers
 {
     #region Using Directives
 
+    using System;
     using System.Drawing;
     using System.Linq;
 
+    using LeagueSharp;
     using LeagueSharp.Common;
 
     using Circle = LeagueSharp.Common.Circle;
@@ -41,6 +43,10 @@ namespace MinionsTillLevel.Managers
 
         public static Menu Menu;
 
+        public static Menu AllyMenu;
+
+        public static Menu EnemyMenu;
+
         #endregion
 
         #region Public Methods and Operators
@@ -54,13 +60,29 @@ namespace MinionsTillLevel.Managers
             Menu.AddItem(new MenuItem("drawRange", "Draw Exp Range").SetValue(new Circle(true, Color.White, 1600f)));
             Menu.AddItem(new MenuItem("yOffset", "Y Pos Offset").SetValue(new Slider(50, 0, 150)));
 
+            AllyMenu = new Menu("Allies", "allyMenu");
+            EnemyMenu = new Menu("Enemies", "enemyMenu");
+
+            Console.WriteLine(ObjectManager.Player.Team.ToString());
+
             foreach (var champion in HeroManager.AllHeroes.ToList())
             {
-                Menu.AddItem(
-                    new MenuItem("drawFor" + champion.ChampionName, "Draw for " + champion.ChampionName).SetValue(true));
+                if (champion.Team == ObjectManager.Player.Team)
+                {
+                    AllyMenu.AddItem(
+                        new MenuItem("drawFor" + champion.ChampionName, "Draw for " + champion.ChampionName).SetValue(
+                            true));
+                }
+                else
+                {
+                    EnemyMenu.AddItem(
+                        new MenuItem("drawFor" + champion.ChampionName, "Draw for " + champion.ChampionName).SetValue(true));
+                }
             }
 
             Enabled = Menu.Item("enable").GetValue<bool>();
+            Menu.AddSubMenu(AllyMenu);
+            Menu.AddSubMenu(EnemyMenu);
             Menu.AddToMainMenu();
         }
 

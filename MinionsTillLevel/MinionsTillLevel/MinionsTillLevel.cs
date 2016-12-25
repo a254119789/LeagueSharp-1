@@ -57,7 +57,6 @@ namespace MinionsTillLevel
 
             if (ObjectManager.Player.Level != 18)
             {
-                Console.WriteLine(Player.Level);
                 ExpTillNextLevel = Math.Ceiling(PlayerManager.ReturnNextLevelExp(Player.Level) - Player.Experience);
                 GlobalExpTillLevel = ExpTillNextLevel.ToString(CultureInfo.CurrentCulture);
             }

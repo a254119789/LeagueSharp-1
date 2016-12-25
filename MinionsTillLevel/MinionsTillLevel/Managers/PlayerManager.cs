@@ -82,8 +82,6 @@ namespace MinionsTillLevel.Managers
                 totalExp = totalExp + LevelExp[i];
             }
 
-            Console.WriteLine(totalExp);
-
             return totalExp;
         }
 

@@ -81,7 +81,16 @@ namespace MinionsTillLevel.Managers
 
             foreach (var champion in HeroManager.AllHeroes.ToList())
             {
-                if (!champion.IsVisible || champion.IsDead || !MenuManager.Menu.Item("drawFor" + champion.ChampionName).GetValue<bool>())
+                if (!champion.IsVisible || champion.IsDead)
+                {
+                    return;
+                }
+
+                if (champion.Team == ObjectManager.Player.Team && !MenuManager.AllyMenu.Item("drawFor" + champion.ChampionName).GetValue<bool>())
+                {
+                    return;
+                }
+                if (champion.Team != ObjectManager.Player.Team && !MenuManager.EnemyMenu.Item("drawFor" + champion.ChampionName).GetValue<bool>())
                 {
                     return;
                 }
@@ -106,14 +115,15 @@ namespace MinionsTillLevel.Managers
                     stringText);
 
                 Drawing.DrawText(
-                    pos.X - 150,
+                    pos.X - 165,
                     pos.Y + MenuManager.Menu.Item("yOffset").GetValue<Slider>().Value + 20,
                     textColor,
                     string.Format(
-                        "Minions till level: {0} Melee or {1} Ranged or {2} Cannons",
+                        "Minions till level: {0} Melee, {1} Ranged, {2} Cannon or {3} Supers",
                         numberOfMelee,
                         numberOfRanged,
-                        numberOfCannons));
+                        numberOfCannons,
+                        numberOfSupers));
             }
         }
 
