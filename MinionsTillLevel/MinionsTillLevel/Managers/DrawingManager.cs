@@ -81,7 +81,7 @@ namespace MinionsTillLevel.Managers
 
             foreach (var champion in HeroManager.AllHeroes.ToList())
             {
-                if (!champion.IsVisible || champion.IsDead)
+                if (!champion.IsVisible)
                 {
                     return;
                 }
